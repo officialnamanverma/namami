@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  background: #0b0f1a;
+  color: white;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  padding-bottom: env(safe-area-inset-bottom);
+  overflow: hidden;
+  overscroll-behavior-y: contain;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  touch-action: manipulation;
+  position: relative;
+}
+
+@supports (height: 100dvh) {
+  body {
+    min-height: 100dvh;
+  }
+}
+
+.aurora {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(138,180,248,0.12), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(192,132,252,0.12), transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(249,168,212,0.06), transparent 50%),
+    #0b0f1a;
+  z-index: -1;
+  pointer-events: none;
+}
+
+button, input, textarea {
+  -webkit-tap-highlight-color: transparent;
+  font-size: 16px;
+}
+
+a, button {
+  touch-action: manipulation;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+}
+
+nextjs-portal {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+
+  input {
+    padding: 10px 12px;
+  }
+
+  button {
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
